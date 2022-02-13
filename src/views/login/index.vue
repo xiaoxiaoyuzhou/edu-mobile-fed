@@ -72,6 +72,8 @@ export default {
         this.$toast.success('登录成功')
         // 将登录数据存储到本地
         this.$store.commit('setUser', data.content)
+        // 跳转至登录前的页面
+        this.$router.push(this.$route.query.fromPath || '/')
       } else {
         this.$toast.fail(data.message)
       }
