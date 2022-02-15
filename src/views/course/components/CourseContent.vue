@@ -13,7 +13,7 @@
 
 <script>
 import { getAllAds } from '@/services/course'
-import CourseContentList from './CourseContentList.vue'
+import CourseContentList from '@/components/CourseContentList.vue'
 export default {
   name: 'CourseContent',
   components: {

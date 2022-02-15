@@ -1,12 +1,23 @@
 <template>
   <div class="learn">
-    学习功能页面
+    <!-- 顶部功能 -->
+    <van-nav-bar title="已购课程" />
+    <!-- 课程列表 -->
+    <course-content-list></course-content-list>
+    <!-- 底部导航 -->
+    <layout-footer></layout-footer>
   </div>
 </template>
 
 <script>
+import LayoutFooter from '@/components/LayoutFooter'
+import CourseContentList from '@/components/CourseContentList.vue'
 export default {
-  name: 'Learn'
+  name: 'Learn',
+  components: {
+    LayoutFooter,
+    CourseContentList
+  }
 }
 </script>
 
