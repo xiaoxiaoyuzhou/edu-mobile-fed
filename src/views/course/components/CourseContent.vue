@@ -7,12 +7,14 @@
       </van-swipe-item>
     </van-swipe>
     <!-- 下拉列表展示课程部分 -->
-    <course-content-list></course-content-list>
+    <course-content-list
+      :fetchData="fetchData"
+    ></course-content-list>
   </div>
 </template>
 
 <script>
-import { getAllAds } from '@/services/course'
+import { getAllAds, getQueryCourses } from '@/services/course'
 import CourseContentList from '@/components/CourseContentList.vue'
 export default {
   name: 'CourseContent',
@@ -34,6 +36,10 @@ export default {
       if (data.state === 1) {
         this.adList = data.content[0].adDTOList
       }
+    },
+    // 传入请求
+    fetchData (options) {
+      return getQueryCourses(options)
     }
   },
   computed: {

@@ -18,6 +18,18 @@ const routes = [
     component: Course
   },
   {
+    path: '/course-info/:courseId',
+    name: 'course-info',
+    component: () => import(/* webpackChunkName: 'course-info' */'@/views/course-info'),
+    props: true
+  },
+  {
+    path: '/lesson-video/:lessonId',
+    name: 'lesson-video',
+    component: () => import(/* webpackChunkName: 'lesson-video' */'@/views/course-info/video'),
+    props: true
+  },
+  {
     path: '/learn',
     name: 'learn',
     component: () => import(/* webpackChunkName: 'learn' */'@/views/learn'),
@@ -28,6 +40,13 @@ const routes = [
     name: 'user',
     component: () => import(/* webpackChunkName: 'user' */'@/views/user'),
     meta: { requiresAuth: true }
+  },
+  {
+    path: '/pay/:courseId',
+    name: 'pay',
+    component: () => import(/* webpackChunkName: 'pay' */'@/views/pay'),
+    meta: { requiresAuth: true },
+    props: true
   },
   {
     path: '*',
